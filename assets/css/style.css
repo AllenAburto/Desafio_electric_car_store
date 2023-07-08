@@ -1,0 +1,391 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 5fr;
+  grid-template-rows: auto 4fr auto;
+  grid-template-areas:
+    "header aside"
+    "header section"
+    "footer paginacion";
+}
+
+.header {
+  grid-area: header;
+  background-color: rgb(45, 45, 241);
+  color: white;
+  height: 90vh;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: self-end;
+  margin: 20px;
+}
+
+.title p {
+  padding: 0px 10px;
+  font-size: 20px;
+}
+
+.burger {
+  display: none;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none;
+  padding: 30px 0px;
+  font-size: 20px;
+}
+
+.list a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 0px;
+}
+
+.list a:hover {
+  cursor: pointer;
+  font-size: 30px;
+  color: yellow;
+}
+
+.aside {
+  grid-area: aside;
+  background-color: rgb(190, 185, 190);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.aside select {
+  display: block;
+  height: 30px;
+  width: 90%;
+}
+
+.section {
+  grid-area: section;
+  background-color: white;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  gap: 2vw;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.item h3 {
+  margin: 10px;
+}
+
+.item button {
+  background-color: rgb(18, 84, 164);
+  color: white;
+  height: 4vh;
+  width: 40%;
+  border-radius: 1em;
+  margin: 15px;
+  transition: all 0, 5s ease;
+}
+
+.item button:hover {
+  cursor: pointer;
+  color: black;
+  background-color: lightblue;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.card h3 {
+  margin: 10px;
+}
+
+.card button {
+  background-color: rgb(18, 84, 164);
+  color: white;
+  height: 4vh;
+  width: 40%;
+  border-radius: 1em;
+  margin: 15px;
+  transition: all 0, 5s ease;
+}
+
+.card button:hover {
+  cursor: pointer;
+  color: black;
+  background-color: lightblue;
+}
+
+.paginacion {
+  grid-area: paginacion;
+  margin: 20px 0;
+}
+
+.paginacion ul {
+  list-style: none;
+  text-align: center;
+}
+
+.paginacion ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.paginacion ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+}
+
+.paginacion ul li a:hover {
+  background: #037e8c;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: rgb(4, 4, 143);
+  color: white;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer p {
+  padding: 0px 20px;
+  text-align: center;
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto 5fr;
+    grid-template-rows: auto 4fr auto auto;
+    grid-template-areas:
+      "header header"
+      "aside section"
+      "aside paginacion"
+      "footer footer";
+  }
+
+  .header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: rgb(45, 45, 241);
+    color: white;
+    height: 10vh;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: self-end;
+  }
+
+  .title p {
+    padding: 0px 10px;
+    font-size: 20px;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 20px;
+    gap: 20px;
+  }
+
+  .list a:hover {
+    cursor: pointer;
+    font-size: 30px;
+    color: yellow;
+  }
+
+  .aside {
+    justify-content: flex-start;
+    width: 150px;
+    height: 80vh;
+  }
+
+  .aside h2 {
+    font-size: 20px;
+  }
+
+  .section {
+    grid-area: section;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    gap: 2vw;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    background-color: white;
+  }
+
+  .card h3 {
+    margin: 10px;
+  }
+
+  .card button {
+    background-color: rgb(18, 84, 164);
+    color: white;
+    height: 4vh;
+    width: 40%;
+    border-radius: 1em;
+    margin: 15px;
+    transition: all 0, 5s ease;
+  }
+
+  .card button:hover {
+    cursor: pointer;
+    color: black;
+    background-color: lightblue;
+  }
+
+  .item {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+      "header header"
+      "aside aside"
+      "section section"
+      "paginacion paginacion"
+      "footer footer";
+  }
+
+  .header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: rgb(45, 45, 241);
+    color: white;
+    height: 10vh;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: self-end;
+  }
+
+  .title p {
+    padding: 0px 10px;
+    font-size: 20px;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .list {
+    display: none;
+  }
+
+  .section {
+    grid-area: section;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    justify-content: center;
+    padding: 20px 0px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    background-color: white;
+  }
+
+  .card h3 {
+    margin: 10px;
+  }
+
+  .card button {
+    background-color: rgb(18, 84, 164);
+    color: white;
+    height: 4vh;
+    width: 40%;
+    border-radius: 1em;
+    margin: 15px;
+    transition: all 0, 5s ease;
+  }
+
+  .card button:hover {
+    cursor: pointer;
+    color: black;
+    background-color: lightblue;
+  }
+  .item {
+    display: none;
+  }
+
+  .auto {
+    display: none;
+  }
+}
